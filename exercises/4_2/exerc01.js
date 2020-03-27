@@ -1,6 +1,6 @@
 // print a square of asterisks
 
-let n = 6;
+let n = 5;
 let asterisks = '';
 
 for(let i=1; i<=n; i++){
