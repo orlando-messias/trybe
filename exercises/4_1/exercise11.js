@@ -1,3 +1,5 @@
+// Calculate taxes
+
 let grossSalary = 4000;
 let baseSalary = 0; netSalary = 0; inss = 0; ir = 0;
 
