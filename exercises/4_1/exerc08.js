@@ -1,11 +1,11 @@
-// returns if one variable or more between three other variables are even
+// returns if one variable or more between three other variables are odd
 
-let num1 = 7; num2 = 16; num3 = 11;
-let even = false;
+let num1 = 22; num2 = 16; num3 = 51;
+let odd = false;
 
-if((num1 % 2 == 0) || (num2 % 2 == 0) || (num3 % 2 == 0))
-    even = true;
+if((num1 % 2 != 0) || (num2 % 2 != 0) || (num3 % 2 != 0))
+    odd = true;
 else
-    even = false;
+    odd = false;
 
-console.log(even)
+console.log(odd)
