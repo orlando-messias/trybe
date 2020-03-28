@@ -13,4 +13,3 @@ for(let i=0; i<=middle; i++){  // repeat asterisks considering the middle of the
     blankSpace = '';
     asterisk += '**';  // every new line add 2 new asterisks
 }
-
