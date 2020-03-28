@@ -5,7 +5,7 @@ let blankSpace = '';
 let asterisk = '';
 
 
-for(let i=1; i<=n; i++){
+for(let i=1; i<=n-2; i++){
     for(let j=i; j<n; j++){
         blankSpace += ' ';
     }
