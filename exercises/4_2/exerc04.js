@@ -1,19 +1,16 @@
-// print a pyramid of asterisks
+// print a pyramid of asteriks
 
 let n = 5;
 let blankSpace = '';
-let asterisk = '';
+let asterisk = '*';
+let middle = parseInt(n / 2);  // defines the middle of the first asterisk
 
-
-for(let i=1; i<=n; i++){
-    for(let j=i; j<n; j++){
+for(let i=0; i<=middle; i++){  // repeat asterisks considering the middle of the pyramid
+    for(let j=i; j<=middle; j++){  // repeat blank spaces considering the middle of the pyramid
         blankSpace += ' ';
     }
-    if(i === 1)
-        asterisk += '*';
-    else
-        asterisk += '**';
-    console.log(blankSpace + asterisk);
+    console.log(blankSpace + asterisk)
     blankSpace = '';
+    asterisk += '**';  // every new line add 2 new asterisks
 }
 
