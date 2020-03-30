@@ -10,7 +10,7 @@ function verifyPalindrome(word){
         if(verifyWordCopy[i] === reverseWord[i])
             countEqual++
     }
-    if(countEqual == word.length)
+    if(countEqual === word.length)
         isPalindrome = true
     return isPalindrome
 }
