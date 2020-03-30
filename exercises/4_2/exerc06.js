@@ -15,4 +15,4 @@ else{
             isPrimeNumber = true;
     }
 }
-console.log(isPrimeNumber)
+console.log(isPrimeNumber);
