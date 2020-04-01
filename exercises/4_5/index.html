@@ -85,6 +85,19 @@
         img.className = 'small-image'
         document.querySelector('.left-content').appendChild(img)
 
+        let num = [
+          'Um', 'Dois', 'Trẽs', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'
+        ]
+        let listRight = document.createElement('ul')
+        document.querySelector('.right-content').appendChild(listRight)
+        for(let i=0; i<num.length; i++){
+          let elementItem = document.createElement('li')
+          elementItem.innerHTML = num[i]
+          listRight.appendChild(elementItem)
+        }
+
+
+
     </script>
   </body>
 </html>
