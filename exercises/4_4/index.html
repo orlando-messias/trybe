@@ -50,10 +50,15 @@
         function changeColorCenter(element, color){
             document.getElementsByClassName(element)[0].style.backgroundColor = color
         }
+
+        function changeText(element, text){
+            document.getElementsByClassName(element)[0].innerHTML = text
+        }
         
         description('p', 'Daqui a 02 anos quero assumir o cargo de Desenvolvedor Pleno.')
         changeColorMain('main-content','green')
         changeColorCenter('center-content', 'white')
+        changeText('title', 'Exercício 4.4 - JavaScript')
 
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
