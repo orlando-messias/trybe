@@ -54,11 +54,17 @@
         function changeText(element, text){
             document.getElementsByClassName(element)[0].innerHTML = text
         }
+
+        function toUpper(tag){
+            let upper = document.getElementsByTagName(tag)[0]
+            upper.innerHTML = upper.innerText.toUpperCase()
+        }
         
         description('p', 'Daqui a 02 anos quero assumir o cargo de Desenvolvedor Pleno.')
         changeColorMain('main-content','green')
         changeColorCenter('center-content', 'white')
         changeText('title', 'Exercício 4.4 - JavaScript')
+        toUpper('p')
 
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
