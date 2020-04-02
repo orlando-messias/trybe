@@ -59,12 +59,21 @@
             let upper = document.getElementsByTagName(tag)[0]
             upper.innerHTML = upper.innerText.toUpperCase()
         }
+
+        function printConsole(tag){
+            let text = '';
+            let tags = document.getElementsByTagName(tag)
+            for (let i=0; i<tags.length; i++)
+                text += tags[i].innerText + '\n\n'
+            return text
+        }
         
         description('p', 'Daqui a 02 anos quero assumir o cargo de Desenvolvedor Pleno.')
         changeColorMain('main-content','green')
         changeColorCenter('center-content', 'white')
         changeText('title', 'Exercício 4.4 - JavaScript')
         toUpper('p')
+        console.log(printConsole('p'))
 
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
