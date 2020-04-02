@@ -42,8 +42,13 @@
         function description(tag, text){
             document.getElementsByTagName(tag)[0].innerHTML = text
         }
+
+        function changeColorMain(element, color){
+            document.getElementsByClassName(element)[0].style.backgroundColor = color
+        }
         
         description('p', 'Daqui a 02 anos quero assumir o cargo de Desenvolvedor Pleno.')
+        changeColorMain('main-content','green')
 
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
@@ -60,3 +65,7 @@
     </script>
   </body>
 </html>
+
+
+/*
+
