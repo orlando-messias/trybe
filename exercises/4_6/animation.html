@@ -16,10 +16,15 @@
     let leftValue = 0
 
     function catWalk(){
-        img.style.left = parseInt(img.style.left) + 10 + 'px'
-        leftValue = img.style.left.replace('px','')
-        if(leftValue > width)
-            img.style.left = '0px'
+        if(leftValue < width){
+            img.style.left = parseInt(img.style.left) + 10 + 'px'
+            leftValue = img.style.left.replace('px','')
+        }
+        if(leftValue > width){
+            img.style.left = parseInt(img.style.left) - 10 + 'px'
+            leftValue = img.style.left.replace('px','')
+            console.log(leftValue)
+        }
      }
 
     let img = document.getElementById('cat-walk')
