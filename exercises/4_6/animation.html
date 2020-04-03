@@ -12,9 +12,12 @@
 
  <script>
 
+    let screenWidth = window.innerWidth
     function catWalk(){
         leftValue = img.style.left.replace('px','')
-        img.style.left = parseInt(leftValue) + 10 + 'px'
+        if(leftValue < screenWidth-img.width)
+            img.style.left = parseInt(leftValue) + 10 + 'px'
+
      }
 
     let img = document.getElementById('cat-walk')
