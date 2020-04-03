@@ -13,10 +13,17 @@
  <script>
 
     let screenWidth = window.innerWidth
+    endOfScreen = false
     function catWalk(){
         leftValue = img.style.left.replace('px','')
-        if(leftValue < screenWidth-img.width)
+        if((leftValue < screenWidth-img.width) && endOfScreen == false)
             img.style.left = parseInt(leftValue) + 10 + 'px'
+        else
+            endOfScreen = true
+        if(endOfScreen && leftValue >= 0){
+            img.style.left = parseInt(leftValue) - 10 + 'px'
+        }else
+            endOfScreen = false
 
      }
 
