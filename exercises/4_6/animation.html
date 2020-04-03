@@ -12,17 +12,20 @@
 
  <script>
 
+    let width = window.innerWidth
+    let leftValue = 0
+
     function catWalk(){
         img.style.left = parseInt(img.style.left) + 10 + 'px'
+        leftValue = img.style.left.replace('px','')
+        if(leftValue > width)
+            img.style.left = '0px'
      }
 
     let img = document.getElementById('cat-walk')
     img.style.left = '0px'
-
-    window.setInterval(catWalk, 50)
-     
-
-     
+    let interval = 100
+    setInterval(catWalk, interval)
     
  </script>
 
