@@ -34,7 +34,13 @@
 </span>
 <span>
     <b>Choose a Font Size</b> &nbsp; <input type="number" id="font-size" min="10" max="18" placeholder="10">px | 
-    <b> a Line Height </b> &nbsp; <input type="number" id="line-height" min="20" max="30" placeholder="20">px
+    <b> a Line Height </b> &nbsp; <input type="number" id="line-height" min="20" max="30" placeholder="20">px | 
+    <b> a Font Family </b> &nbsp; 
+    <select id="font-family">
+        <option value="Arial, Helvetica, sans-serif">Arial, Helvetica, sans-serif</option>
+        <option value="Georgia, 'Times, Times New Roman', serif">Georgia, Times, Times New Roman, serif</option>
+        <option value="'Courier New', Courier, monospace">Courier</option>
+    </select> 
     <br>&nbsp;
 </span>
 
@@ -129,15 +135,20 @@
                 let txtColor = userPref.txtColor
                 let fontSize = userPref.fontSize
                 let lineSpace = userPref.lineSpace
+                let fontFamily = userPref.fontFam
                 document.body.style.backgroundColor = bgColor
                 document.body.style.color = txtColor
                 let everyP = document.getElementsByTagName('p')
                 for(let i=0; i<everyP.length; i++){
                     everyP[i].style.fontSize = fontSize + 'px'
                     everyP[i].style.lineHeight = lineSpace + 'px'
+                    everyP[i].style.fontFamily = fontFamily
                 }
                 document.getElementById('font-size').value = fontSize
                 document.getElementById('line-height').value = lineSpace
+                document.getElementById('font-family').value = fontFamily
+                document.querySelectorAll('input[type=radio][name=color][value=' + bgColor)[0].checked=true  // SELECT THE LAST ITEM CHOSEN BY USER
+                document.querySelectorAll('input[type=radio][name=txt-color][value=' + txtColor)[0].checked=true  // SELECT THE LAST ITEM CHOSEN BY USER
             }
             else{
                 userPref = {
@@ -188,6 +199,16 @@
                     paragraphs[i].style.lineHeight = height + 'px'
                 }
                 userPref.lineSpace = height
+                localStorage.setItem('userPref',JSON.stringify(userPref))
+            })
+
+            let elementFontFamily = document.getElementById('font-family')
+            elementFontFamily.addEventListener('change', () => {
+                let font = event.target.value
+                for(let i=0; i<paragraphs.length; i++){
+                    paragraphs[i].style.fontFamily = font
+                }
+                userPref.fontFam = font
                 localStorage.setItem('userPref',JSON.stringify(userPref))
             })
             
