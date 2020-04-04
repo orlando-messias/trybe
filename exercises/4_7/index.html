@@ -32,6 +32,10 @@
     <label for="white"><input type="radio" name="color" value="white" id="white">White</label>
     <br>&nbsp;
 </span>
+<span>
+    <b>Choose a Font Size</b> &nbsp; <input type="number" id="font-size" min="10" max="18" placeholder="10">px
+    <br>&nbsp;
+</span>
 
 <hr />
 
@@ -122,8 +126,14 @@
                 userPref = JSON.parse(preferences)
                 let bgColor = userPref.bgColor
                 let txtColor = userPref.txtColor
+                let fontSize = userPref.fontSize
                 document.body.style.backgroundColor = bgColor
                 document.body.style.color = txtColor
+                let pSize = document.getElementsByTagName('p')
+                for(let i=0; i<pSize.length; i++){
+                    pSize[i].style.fontSize = fontSize + 'px'
+                }
+                document.getElementById('font-size').value = fontSize
             }
             else{
                 userPref = {
@@ -155,6 +165,18 @@
                     localStorage.setItem('userPref',JSON.stringify(userPref))
                 })
             }
+
+            let elementFontSize = document.getElementById('font-size')
+            elementFontSize.addEventListener('change', () => {
+                let size = event.target.value
+                let paragraphs = document.getElementsByTagName('p')
+                for(let i=0; i<paragraphs.length; i++){
+                    paragraphs[i].style.fontSize = size + 'px'
+                }
+                userPref.fontSize = size
+                localStorage.setItem('userPref',JSON.stringify(userPref))
+            })
+            
 
         }else
             alert('No Web Storage support')
