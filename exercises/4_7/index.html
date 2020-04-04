@@ -24,7 +24,14 @@
 <h1>Lorem Ipsum</h1>
 <h4>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</h4>
 <h5>"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</h5>
-
+<span><b>Pick a Color you prefer</b> &nbsp;
+    <label for="blue"><input type="radio" name="color" value="blue" id="blue">Blue</label>
+    <label for="red"><input type="radio" name="color" value="red" id="red">Red</label>
+    <label for="yellow"><input type="radio" name="color" value="yellow" id="yellow">Yellow</label>
+    <label for="gray"><input type="radio" name="color" value="gray" id="gray">Gray</label>
+    <label for="white"><input type="radio" name="color" value="white" id="white">White</label>
+    <br>&nbsp;
+</span>
 
 <hr />
 
@@ -102,6 +109,46 @@
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-15036679-1', '.lipsum.com');
   ga('send', 'pageview');
+
+
+    window.onload = function(){
+
+        if(typeof Storage !== undefined){
+            
+            let userPref = ''
+
+            if(localStorage.getItem('userPref')){
+                let preferences = localStorage.getItem('userPref')
+                userPref = JSON.parse(preferences)
+                let bgColor = userPref.bgColor
+                document.body.style.backgroundColor = bgColor
+            }
+            else{
+                userPref = {
+                    bgColor:'',
+                    txtColor: '',
+                    fontSize: '',
+                    lineSpace: '',
+                    fontFam: ''
+                }
+                localStorage.setItem('userPref',JSON.stringify(userPref)) 
+            }
+
+            let elementsBg = document.querySelectorAll('input[type=radio][name=color]')
+            for(let i=0; i<elementsBg.length; i++){
+                elementsBg[i].addEventListener('click', () => {
+                    let color = event.target.value
+                    document.body.style.backgroundColor = color
+                    userPref.bgColor = color
+                    localStorage.setItem('userPref',JSON.stringify(userPref))
+                })
+            }
+
+        }else
+            alert('No Web Storage support')
+    }
+
+
 </script> 
 
 </body></html>
