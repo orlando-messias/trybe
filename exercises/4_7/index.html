@@ -54,7 +54,7 @@
 </div><div>
 <h2>Where can I get some?</h2>
 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
-<form method="post" action="/feed/html"><table style="width:100%"><tr><td rowspan="2"><input type="text" name="amount" value="5" size="3" id="amount" /></td><td rowspan="2"><table style="text-align:left"><tr><td style="width:20px"><input type="radio" name="what" value="paras" id="paras" checked="checked" /></td><td><label for="paras">paragraphs</label></td></tr><tr><td style="width:20px"><input type="radio" name="what" value="words" id="words" /></td><td><label for="words">words</label></td></tr><tr><td style="width:20px"><input type="radio" name="what" value="bytes" id="bytes" /></td><td><label for="bytes">bytes</label></td></tr><tr><td style="width:20px"><input type="radio" name="what" value="lists" id="lists" /></td><td><label for="lists">lists</label></td></tr></table></td><td style="width:20px"><input type="checkbox" name="start" id="start" value="yes" checked="checked" /></td><td style="text-align:left"><label for="start">Start with 'Lorem<br />ipsum dolor sit amet...'</label></td></tr><tr><td></td><td style="text-align:left"><input type="submit" name="generate" id="generate" value="Generate Lorem Ipsum" /></td></tr></table></form></div><br /></div>
+<form method="post" action="/feed/html"><table style="width:100%"><tr><td rowspan="2"><b>Pick a Text Color</b></td><td rowspan="2"><table style="text-align:left"><tr><td style="width:20px"><input type="radio" name="txt-color" value="green" id="green"/></td><td><label for="green">Green</label></td></tr><tr><td style="width:20px"><input type="radio" name="txt-color" value="black" id="black" /></td><td><label for="black">Black</label></td></tr><tr><td style="width:20px"><input type="radio" name="txt-color" value="cyan" id="cyan" /></td><td><label for="cyan">Cyan</label></td></tr><tr><td style="width:20px"><input type="radio" name="txt-color" value="white" id="white_" /></td><td><label for="white_">White</label></td></tr></table></td><td style="width:20px"><input type="checkbox" name="start" id="start" value="yes" checked="checked" /></td><td style="text-align:left"><label for="start">Start with 'Lorem<br />ipsum dolor sit amet...'</label></td></tr><tr><td></td><td style="text-align:left"><input type="submit" name="generate" id="generate" value="Generate Lorem Ipsum" /></td></tr></table></form></div><br /></div>
 <hr /><div class="boxed" style="color:#ff0000;"><strong>Translations:</strong> Can you help translate this site into a foreign language ? Please email us with details if you can help.</div>
 
 <hr /><div class="boxed">There are now a set of mock banners available <a href="https://www.lipsum.com/banners/" class="lnk">here</a> in three colours and in a range of standard banner sizes:<br /><a href="https://www.lipsum.com/banners/"><img src="images/banners/black_234x60.gif" width="234" height="60" alt="Banners" /></a><a href="https://www.lipsum.com/banners/"><img src="images/banners/grey_234x60.gif" width="234" height="60" alt="Banners" /></a><a href="/banners"><img src="images/banners/white_234x60.gif" width="234" height="60" alt="Banners" /></a></div>
@@ -121,7 +121,9 @@
                 let preferences = localStorage.getItem('userPref')
                 userPref = JSON.parse(preferences)
                 let bgColor = userPref.bgColor
+                let txtColor = userPref.txtColor
                 document.body.style.backgroundColor = bgColor
+                document.body.style.color = txtColor
             }
             else{
                 userPref = {
@@ -140,6 +142,16 @@
                     let color = event.target.value
                     document.body.style.backgroundColor = color
                     userPref.bgColor = color
+                    localStorage.setItem('userPref',JSON.stringify(userPref))
+                })
+            }
+
+            let elementsTxt = document.querySelectorAll('input[type=radio][name=txt-color]')
+            for(let i=0; i<elementsTxt.length; i++){
+                elementsTxt[i].addEventListener('click', () => {
+                    let color = event.target.value
+                    document.body.style.color = color
+                    userPref.txtColor = color
                     localStorage.setItem('userPref',JSON.stringify(userPref))
                 })
             }
