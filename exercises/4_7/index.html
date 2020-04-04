@@ -33,7 +33,8 @@
     <br>&nbsp;
 </span>
 <span>
-    <b>Choose a Font Size</b> &nbsp; <input type="number" id="font-size" min="10" max="18" placeholder="10">px
+    <b>Choose a Font Size</b> &nbsp; <input type="number" id="font-size" min="10" max="18" placeholder="10">px | 
+    <b> a Line Height </b> &nbsp; <input type="number" id="line-height" min="20" max="30" placeholder="20">px
     <br>&nbsp;
 </span>
 
@@ -127,13 +128,16 @@
                 let bgColor = userPref.bgColor
                 let txtColor = userPref.txtColor
                 let fontSize = userPref.fontSize
+                let lineSpace = userPref.lineSpace
                 document.body.style.backgroundColor = bgColor
                 document.body.style.color = txtColor
-                let pSize = document.getElementsByTagName('p')
-                for(let i=0; i<pSize.length; i++){
-                    pSize[i].style.fontSize = fontSize + 'px'
+                let everyP = document.getElementsByTagName('p')
+                for(let i=0; i<everyP.length; i++){
+                    everyP[i].style.fontSize = fontSize + 'px'
+                    everyP[i].style.lineHeight = lineSpace + 'px'
                 }
                 document.getElementById('font-size').value = fontSize
+                document.getElementById('line-height').value = lineSpace
             }
             else{
                 userPref = {
@@ -167,13 +171,23 @@
             }
 
             let elementFontSize = document.getElementById('font-size')
+            let paragraphs = document.getElementsByTagName('p')
             elementFontSize.addEventListener('change', () => {
                 let size = event.target.value
-                let paragraphs = document.getElementsByTagName('p')
                 for(let i=0; i<paragraphs.length; i++){
                     paragraphs[i].style.fontSize = size + 'px'
                 }
                 userPref.fontSize = size
+                localStorage.setItem('userPref',JSON.stringify(userPref))
+            })
+
+            let elementLineHeight = document.getElementById('line-height')
+            elementLineHeight.addEventListener('change', () => {
+                let height = event.target.value
+                for(let i=0; i<paragraphs.length; i++){
+                    paragraphs[i].style.lineHeight = height + 'px'
+                }
+                userPref.lineSpace = height
                 localStorage.setItem('userPref',JSON.stringify(userPref))
             })
             
