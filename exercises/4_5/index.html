@@ -1,0 +1,121 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 4.5</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <script>
+        let title = document.createElement('h1')
+        title.innerHTML = 'Exercício 4.5 - JavaScript DOM'
+        document.body.appendChild(title)
+
+
+        let mainDiv = document.createElement('div')
+        mainDiv.className = 'main-content'
+        document.body.appendChild(mainDiv)
+
+        let centerDiv = document.createElement('div')
+        centerDiv.className = 'center-content'
+        document.querySelector('.main-content').appendChild(centerDiv)
+
+        let centerP = document.createElement('p')
+        document.querySelector('.center-content').appendChild(centerP)
+
+        let leftDiv = document.createElement('div')
+        leftDiv.className = 'left-content'
+        document.querySelector('.main-content').appendChild(leftDiv)
+
+        let rightDiv = document.createElement('div')
+        rightDiv.className = 'right-content'
+        document.querySelector('.main-content').appendChild(rightDiv)
+
+        let img = document.createElement('img')
+        img.src = 'https://picsum.photos/200'
+        img.className = 'small-image'
+        document.querySelector('.left-content').appendChild(img)
+
+        let num = [
+          'Um', 'Dois', 'Trẽs', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'
+        ]
+        let listRight = document.createElement('ul')
+        document.querySelector('.right-content').appendChild(listRight)
+        for(let i=0; i<num.length; i++){
+          let elementItem = document.createElement('li')
+          elementItem.innerHTML = num[i]
+          listRight.appendChild(elementItem)
+        }
+
+        for(let i=1; i<=3; i++){
+          let headMain = document.createElement('h3')
+          document.querySelector('.main-content').appendChild(headMain)
+        }
+
+        title.className = 'title'
+
+        let everyH3Main = document.querySelectorAll('.main-content > h3')
+        for(let i=0; i<=2; i++)
+          everyH3Main[i].className = 'description'
+
+        document.querySelector('.main-content').removeChild(leftDiv)
+
+        document.querySelector('.right-content').style.marginRight = 'auto'
+
+        centerDiv.style.backgroundColor = 'green'
+
+        for(let i=1; i<3; i++)
+          listRight.removeChild(listRight.lastElementChild)
+
+    </script>
+  </body>
+</html>
