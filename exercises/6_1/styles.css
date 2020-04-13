@@ -10,14 +10,28 @@
   width: 650px;
 }
 
+#profile-pic {
+    position: absolute;
+    float: left;
+    left: 200px;
+    z-index: 100;
+}
+
+header {
+    background-color: rgb(236, 236, 236);
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 h2 {
-  margin-top: 0px;
+  margin: 0px 0px;
   text-align: center;
 }
 
 span {
   display: block;
-  font-weight: 900;
+  /* font-weight: 900; */
   margin-bottom: 5px;
   margin-right: 10px;
 }
@@ -54,6 +68,20 @@ fieldset {
   margin-bottom: 20px;
 }
 
+fieldset.personal-data {
+    background: url('imgs/profile2.png') no-repeat 530px 0px;
+    background-size: 130px;
+}
+
+fieldset.professional-data {
+    background: url('imgs/profile3.png') no-repeat 530px 10px;
+    background-size: 120px;
+}
+
+fieldset legend {
+    font-weight: bold;
+}
+
 textarea {
   resize: none;
   width: 610px;
@@ -66,7 +94,9 @@ footer {
 button {
     height: 30px;
     width: 100px;
-    background-color: rgb(224, 224, 224);
+    background-color: white;
+    border: 2px solid gray;
+    font-weight: bold;
 }
 
 .hasError {
