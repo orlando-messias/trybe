@@ -6,7 +6,7 @@
   margin-top: 20px;
   min-height: 300px;
   padding: 10px;
-  width: 600px;
+  width: 650px;
 }
 
 span {
@@ -19,6 +19,10 @@ span {
 input[type=text] {
   margin-bottom: 20px;
 }
+
+input[type=radio] {
+    margin-left: 25px;
+  }
 
 select {
   background-color: white;
