@@ -26,12 +26,16 @@
 
             <fieldset>
                 <legend>Dados Profissionais</legend>
-                <span>Cargo</span><input type="text" size="30" maxlength="40" required>
-                <span>Descrição do Cargo</span><input type="text" size="70" maxlength="500" required>
-                <span>Data de Início</span><input type="text" size="20" maxlength="10" required> <span class="note">Formato dd/mm/aaaa</span></span>
+                <span>Cargo</span><input type="text" size="30" maxlength="40" name="job" required>
+                <span>Descrição do Cargo</span><input type="text" size="70" maxlength="500" name="job-description" required>
+                <span>Data de Início</span><input type="text" size="20" maxlength="10" name="start-date" id="start-date" required> <span id="note" class="note">Formato dd/mm/aaaa</span></span>
                 <span>Resumo do Currículo</span>
-                <textarea cols="70" rows="10" maxlength="1000" required></textarea> 
+                <textarea cols="70" rows="10" maxlength="1000" name="summary" required></textarea> 
             </fieldset>
+
+            <footer>
+                <button id="btn-submit" type="submit" onclick="validate()">Send</button>
+            </footer>
         </form>
     </div>
     <script src="script.js"></script>
