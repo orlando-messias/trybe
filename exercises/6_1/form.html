@@ -12,11 +12,11 @@
             <fieldset id="personal-data" class="personal-data">
                 <legend>Dados Pessoais</legend>
                 <span>Nome</span><input type="text" name="name" size="50" maxlength="40" required>
-                <span>Email</span><input type="text" name="email" size="30" maxlength="50" required>
+                <span>Email</span><input type="text" name="email" size="30" maxlength="50" pattern="[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                 <span>CPF</span><input type="text" name="cpf" size="20" maxlength="11" required>
                 <span>Endereço</span><input type="text" name="address" size="50" maxlength="200" required>
                 <span>Cidade</span><input type="text" name="city" size="25" maxlength="28" required>
-                </span><select name="state" id="state">
+                </span><select name="state" id="state" required>
                     <option value="">Estado</option>
                 </select>
             </fieldset>
