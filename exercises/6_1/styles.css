@@ -9,11 +9,25 @@
   width: 650px;
 }
 
+h2 {
+  margin-top: 0px;
+  text-align: center;
+}
+
 span {
   display: block;
   font-weight: 900;
   margin-bottom: 5px;
   margin-right: 10px;
+}
+
+span.note {
+  color: red;
+  display: inline;
+  font-size: 12px;
+  margin-left: 10px;
+  font-style: italic;
+  font-weight: 200;
 }
 
 input[type=text] {
@@ -28,4 +42,13 @@ select {
   background-color: white;
   margin-left: 30px;
   width: 100px;
+}
+
+fieldset {
+  margin-bottom: 20px;
+}
+
+textarea {
+  resize: none;
+  width: 610px;
 }

@@ -8,6 +8,7 @@
 </head>
 <body>
     <div id="main" class="main">
+        <h2>Cadastre o seu Currículo</h2>
         <form method="POST" action="">
             <fieldset id="personal-data" class="personal-data">
                 <legend>Dados Pessoais</legend>
@@ -21,6 +22,15 @@
                 </span><select name="state" id="state" required>
                     <option value="">Estado</option>
                 </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Dados Profissionais</legend>
+                <span>Cargo</span><input type="text" size="30" maxlength="40" required>
+                <span>Descrição do Cargo</span><input type="text" size="70" maxlength="500" required>
+                <span>Data de Início</span><input type="text" size="20" maxlength="10" required> <span class="note">Formato dd/mm/aaaa</span></span>
+                <span>Resumo do Currículo</span>
+                <textarea cols="70" rows="10" maxlength="1000" required></textarea> 
             </fieldset>
         </form>
     </div>
