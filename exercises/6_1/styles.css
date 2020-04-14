@@ -103,3 +103,20 @@ button {
     border: 1px solid red;
     box-shadow: 1px 1px 2px red;
 }
+
+#result {
+  position: absolute;
+  top: 0px;
+  margin-left: -15px;
+  visibility: hidden;
+}
+
+#result span{
+  display: inline;
+  text-align: justify;
+}
+
+#result span.title {
+  font-weight: 900;
+  font-size: 18px;
+}

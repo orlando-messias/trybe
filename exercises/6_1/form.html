@@ -8,10 +8,26 @@
 </head>
 <body>
     <div id="main" class="main">
+        <div id="result" class="main">
+            <h2 id="start">CONFIRMAÇÃO DE CADASTRO</h2>
+            <div id="info">
+                <p><span class="title">Nome:</span><span class="data" id="spanname"></span>
+                <p><span class="title">E-mail:</span><span class="data" id="spanemail"></span>
+                <p><span class="title">CPF:</span><span class="data" id="spancpf"></span>
+                <p><span class="title">Endereço:</span><span class="data" id="spanaddress"></span>
+                <p><span class="title">Complemento:</span><span class="data" id="spanbuilding"></span>
+                <p><span class="title">Cidade:</span><span class="data" id="spancity"></span>
+                <p><span class="title">Estado:</span><span class="data" id="spanstate"></span>
+                <p><span class="title">Cargo:</span><span class="data" id="spanjob"></span>
+                <p><span class="title">Descrição:</span><span class="data" id="spanjob-description"></span>
+                <p><span class="title">Data Início:</span><span class="data" id="spanstart-date"></span>
+                <p><span class="title">Resumo:</span><span class="data" id="spansummary"></span>
+            </div>
+        </div>
         <header id="header">
             <h2>CADASTRE SEU CURRÍCULO</h2>
         </header>
-        <form method="POST" action="">
+        <form method="POST" action="" id="curriculum">
             <fieldset id="personal-data" class="personal-data">
                 <legend>Dados Pessoais</legend>
                 <span>Nome</span><input type="text" id="name" name="name" size="50" maxlength="40" required>
@@ -36,12 +52,13 @@
             </fieldset>
 
             <footer>
-                <button id="btn-reset" type="reset">Reset</button>
+                <button id="btn-reset" onclick="testa()">Reset</button>
                 <button id="btn-submit" type="submit" onclick="onSubmit()">Send</button>
             </footer>
         </form>
 
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>

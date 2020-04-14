@@ -36,23 +36,52 @@ function showHideNotification(element, note, show) {
 }
 
 function onSubmit() {
+  let dateValidate = false;
+  let emailValidate = false;
   event.preventDefault();
 
-  if (!dateValidation())
+  if (!dateValidation()) {
     showHideNotification(startDate, dateNote, true);
-  else
+    dateValidate = false;
+  }
+  else {
     showHideNotification(startDate, dateNote, false);
+    dateValidate = true;
+  }
 
-  if (!emailValidation())
+  if (!emailValidation()) {
     showHideNotification(email, emailNote, true);
-  else
+    emailValidate = false;
+  }
+  else {
     showHideNotification(email, emailNote, false);
+    emailValidate = true;
+  }
+
+  if (dateValidate && emailValidate) {
+    document.getElementById('result').style.visibility = 'visible';;
+    document.getElementById('main').style.visibility = 'hidden'
+    showResult();
+  }
 }
 
 for (let i = 0; i < arrStates.length; i += 1){
   let option = document.createElement('option');
   let item = document.createTextNode(arrStates[i]);
-  option.value = arrStates[i].toLowerCase();
+  option.value = arrStates[i];
   option.appendChild(item);
   state.appendChild(option);
+}
+
+function showResult(){
+  let forms = document.getElementById('curriculum')
+  let spans = document.getElementsByClassName('data')
+  let spread = [...forms.elements].forEach(field => {
+    if(['text', 'select-one','textarea'].indexOf(field.type) > -1){
+      document.getElementById(`span${field.name}`).innerHTML = field.value
+    }
+    if(field.name === 'building' && field.checked)
+      document.getElementById(`span${field.name}`).innerHTML = field.value
+  })
+  window.scrollTo(0,0);
 }
