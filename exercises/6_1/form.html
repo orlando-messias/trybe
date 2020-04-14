@@ -30,15 +30,17 @@
                 <legend >Dados Profissionais</legend>
                 <span>Cargo</span><input type="text" size="30" maxlength="40" name="job" required>
                 <span>Descrição do Cargo</span><input type="text" size="70" maxlength="500" name="job-description" required>
-                <span>Data de Início</span><input type="text" size="20" maxlength="10" name="start-date" id="start-date" required> <span id="note" class="note">Formato dd/mm/aaaa</span></span>
+                <span>Data de Início</span><input type="text" size="20" maxlength="10" name="start-date" id="start-date" required placeholder="dd/mm/aaaa"> <span id="date-note" class="note">Data Inválida</span></span>
                 <span>Resumo do Currículo</span>
                 <textarea cols="70" rows="10" maxlength="1000" name="summary" required></textarea> 
             </fieldset>
 
             <footer>
+                <button id="btn-reset" type="reset">Reset</button>
                 <button id="btn-submit" type="submit" onclick="onSubmit()">Send</button>
             </footer>
         </form>
+
     </div>
     <script src="script.js"></script>
 </body>

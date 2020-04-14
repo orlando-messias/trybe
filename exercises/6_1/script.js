@@ -3,13 +3,15 @@ const arrStates = ["AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "
 const btnSubmit = document.getElementById('btn-submit');
 const startDate = document.getElementById('start-date');
 let email = document.getElementById('email');
+let dateNote = document.getElementById('date-note');
+let emailNote = document.getElementById('email-note');
 
 function dateValidation(){
   if(startDate.value.indexOf('/') === 2 && startDate.value.indexOf('/', 3) === 5) {
     let day = startDate.value.substr(0,2);
     let month = startDate.value.substr(3,2);
     let year = startDate.value.substr(6,4);
-    if ((day > 0 && day <= 31) && (month >0 && month <= 12) && (year.length === 4 && year >= 0)) {
+    if ((day > 0 && day <= 31) && (month > 0 && month <= 12) && (year.length === 4 && year >= 0)) {
       return true;
     }
   }
@@ -22,25 +24,29 @@ function emailValidation() {
   return pattern.test(email.value);
 }
 
+function showHideNotification(element, note, show) {
+  if (show) {
+    element.classList.add('hasError');
+    note.style.visibility = 'visible';
+  }
+  else {
+    element.classList.remove('hasError');
+    note.style.visibility = 'hidden';
+  }
+}
+
 function onSubmit() {
   event.preventDefault();
-  if (!dateValidation()) {
-    startDate.classList.add('hasError')
-    document.getElementById('note').innerHTML = 'Data Inválida'  
-  }
-  else {
-    startDate.classList.remove('hasError');
-    document.getElementById('note').innerHTML = ''  
-  }
 
-  if (!emailValidation()) {
-    email.classList.add('hasError');
-    document.getElementById('email-note').style.visibility = 'visible';
-  }
-  else {
-    email.classList.remove('hasError');
-    document.getElementById('email-note').style.visibility = 'hidden';
-  }
+  if (!dateValidation())
+    showHideNotification(startDate, dateNote, true);
+  else
+    showHideNotification(startDate, dateNote, false);
+
+  if (!emailValidation())
+    showHideNotification(email, emailNote, true);
+  else
+    showHideNotification(email, emailNote, false);
 }
 
 for (let i = 0; i < arrStates.length; i += 1){
@@ -50,4 +56,3 @@ for (let i = 0; i < arrStates.length; i += 1){
   option.appendChild(item);
   state.appendChild(option);
 }
-

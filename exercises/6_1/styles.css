@@ -45,7 +45,7 @@ span.note {
   font-weight: 200;
 }
 
-span#email-note {
+span.note{
   visibility: hidden;
 }
 
@@ -69,13 +69,13 @@ fieldset {
 }
 
 fieldset.personal-data {
-    background: url('imgs/profile2.png') no-repeat 530px 0px;
-    background-size: 130px;
+    background: url('imgs/profile5.png') no-repeat 530px 0px;
+    /* background-size: 130px; */
 }
 
 fieldset.professional-data {
-    background: url('imgs/profile3.png') no-repeat 530px 10px;
-    background-size: 120px;
+    background: url('imgs/profile4.png') no-repeat 530px 10px;
+    /* background-size: 120px; */
 }
 
 fieldset legend {
