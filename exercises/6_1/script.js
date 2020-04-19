@@ -6,7 +6,7 @@ let email = document.getElementById('email');
 let dateNote = document.getElementById('date-note');
 let emailNote = document.getElementById('email-note');
 
-function dateValidation(){
+function dateValidation(){ 
   if(startDate.value.indexOf('/') === 2 && startDate.value.indexOf('/', 3) === 5) {
     let day = startDate.value.substr(0,2);
     let month = startDate.value.substr(3,2);
@@ -59,7 +59,7 @@ function onSubmit() {
   }
 
   if (dateValidate && emailValidate) {
-    document.getElementById('result').style.visibility = 'visible';;
+    document.getElementById('result').style.visibility = 'visible';
     document.getElementById('main').style.visibility = 'hidden'
     showResult();
   }
