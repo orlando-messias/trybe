@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Calculator</title>
+</head>
+<body>
+
+  <label>Square this number:
+    <input type="number" id="square-input" size="2">
+  </label>
+  <button id="square-button">Calculate</button>
+  <br><br>
+  
+  <label>Half this number:
+    <input type="number" id="half-input" size="2">
+  </label>
+  <button id="half-button">Calculate</button>
+  <br><br>
+  
+  <label>
+    Fraction:
+    <input type="number" id="percent1-input" size="2">
+  </label>
+  <label>
+    Whole:
+    <input type="number" id="percent2-input" size="2">
+  </label>
+  <button id="percent-button">Calculate</button>
+  <br><br>
+  
+  <label>Calculate area of circle with radius:
+    <input type="number" id="area-input" size="2">
+  </label>
+  <button id="area-button">Calculate</button> 
+  <br><br>
+  <div id="solution"></div>
+
+  <script>
+      function squareNumber(number){
+          return number * number
+      }
+
+      function halfNumber(number){
+          return number/2
+      }
+
+      function percentOf(number1,  number2){
+          return ((number1/number2)*100).toFixed(2)
+      }
+
+      function areaOfCircle(radius){
+          return (Math.PI * squareNumber(radius)).toFixed(2)
+      }
+
+      // Calculates Square Number
+      let numToSquare = document.getElementById('square-input')
+      document.getElementById('square-button').addEventListener('click', () => {
+          let square = squareNumber(numToSquare.value)
+          console.log('The result of squaring the number ' + numToSquare.value + ' is ' + square)
+      })
+
+      // Calculates Half of a Number
+      let wholeNumber = document.getElementById('half-input')
+      document.getElementById('half-button').addEventListener('click', () => {
+          let half = halfNumber(wholeNumber.value)
+          console.log('Half of ' + wholeNumber.value + ' is ' + half)
+      })
+
+      // Calculates Percentage of a Number
+      let percent1 = document.getElementById('percent1-input')
+      let percent2 = document.getElementById('percent2-input')
+      document.getElementById('percent-button').addEventListener('click', () => {
+          let percentCalc = percentOf(percent1.value, percent2.value)
+          console.log(percent1.value + ' is ' + percentCalc+ '% of ' + percent2.value)
+          
+      })
+
+      // Calculates Area of a Circle
+      let radius = document.getElementById('area-input')
+      document.getElementById('area-button').addEventListener('click', () => {
+          let area = areaOfCircle(radius.value)
+          console.log('The area for a circle with radius ' + radius.value + ' is ' + area)
+      })
+
+  </script>
+  
+</body>
+</html>
