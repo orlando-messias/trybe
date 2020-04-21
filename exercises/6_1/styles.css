@@ -1,0 +1,122 @@
+
+.main {
+  border: 8px solid white;
+  box-shadow: 1px 1px 3px black;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  min-height: 300px;
+  padding: 10px;
+  width: 650px;
+}
+
+#profile-pic {
+    position: absolute;
+    float: left;
+    left: 200px;
+    z-index: 100;
+}
+
+header {
+    background-color: rgb(236, 236, 236);
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+h2 {
+  margin: 0px 0px;
+  text-align: center;
+}
+
+span {
+  display: block;
+  /* font-weight: 900; */
+  margin-bottom: 5px;
+  margin-right: 10px;
+}
+
+span.note {
+  color: red;
+  display: inline;
+  font-size: 12px;
+  margin-left: 10px;
+  font-style: italic;
+  font-weight: 200;
+}
+
+span.note{
+  visibility: hidden;
+}
+
+input[type=text] {
+  margin-bottom: 20px;
+  padding-left: 5px;
+}
+
+input[type=radio] {
+    margin-left: 25px;
+  }
+
+select {
+  background-color: white;
+  margin-left: 30px;
+  width: 100px;
+}
+
+fieldset {
+  margin-bottom: 20px;
+}
+
+fieldset.personal-data {
+    background: url('imgs/profile5.png') no-repeat 530px 0px;
+    /* background-size: 130px; */
+}
+
+fieldset.professional-data {
+    background: url('imgs/profile4.png') no-repeat 530px 10px;
+    /* background-size: 120px; */
+}
+
+fieldset legend {
+    font-weight: bold;
+}
+
+textarea {
+  resize: none;
+  width: 610px;
+}
+
+footer {
+  text-align: right;
+}
+
+button {
+    height: 30px;
+    width: 100px;
+    background-color: white;
+    border: 2px solid gray;
+    font-weight: bold;
+}
+
+.hasError {
+    border: 1px solid red;
+    box-shadow: 1px 1px 2px red;
+}
+
+#result {
+  position: absolute;
+  top: 0px;
+  margin-left: -15px;
+  visibility: hidden;
+}
+
+#result span{
+  display: inline;
+  text-align: justify;
+}
+
+#result span.title {
+  font-weight: 900;
+  font-size: 18px;
+}
