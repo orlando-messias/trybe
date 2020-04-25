@@ -19,6 +19,12 @@ figure {
 	margin: 0;
 }
 
+.box {
+    margin:auto;
+    max-width: 430px;
+}
+
+
 @media screen and (min-width: 900px) {
     body {
         background-color: rgb(190, 190, 190);
@@ -49,6 +55,13 @@ figure {
 
     h2 {
         text-align: center;
+    }
+
+    .box {
+        margin: auto;
+        background-color: royalblue;
+        max-width: 900px;
+        position: relative;
     }
 }
 
