@@ -44,9 +44,20 @@ figure {
     img {
         width: 430px;
         border: 2px solid rgb(255, 255, 255);
+        
     }
 
     h2 {
         text-align: center;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    body {
+        background-color: rgb(218, 218, 218);
+        margin: 20px;
+        font-size: 15pt;
+        max-width: 1200px;
+        text-align: justify;
     }
 }
