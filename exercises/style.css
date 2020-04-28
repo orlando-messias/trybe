@@ -18,6 +18,15 @@
     }
 }
 
+@keyframes anime-size{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        width: 100%;
+    }
+}
+
 #exercise-1{
     animation: anime-left-right 3s ease 1s;
     position: relative;
@@ -42,4 +51,8 @@
 .animation2{
     animation: anime-right-left 5s;
     position: relative;
+}
+
+#exercise-7{
+    animation: anime-size 5s ease 0s infinite alternate;
 }
