@@ -24,3 +24,8 @@
     animation: anime-left-right 1s ease 1s 2 alternate;
     position: relative;
 }
+
+.animation{
+    animation: anime-left-right 5s;
+    position: relative;
+}
