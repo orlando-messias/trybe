@@ -91,3 +91,10 @@
 #exercise-9{
     animation: anime-color-mult 4s ease 0s infinite alternate;
 }
+
+#exercise-10{
+    animation-name: anime-size, anime-color-mult;
+    animation-duration: 5s, 4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
