@@ -54,6 +54,21 @@
     }
 }
 
+@keyframes visibility{
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    75% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 #exercise-1{
     animation: anime-left-right 3s ease 1s;
     position: relative;
@@ -78,6 +93,11 @@
 .animation2{
     animation: anime-right-left 5s;
     position: relative;
+}
+
+.animation3{
+    animation: visibility 1s;
+    animation-fill-mode: forwards;
 }
 
 #exercise-7{

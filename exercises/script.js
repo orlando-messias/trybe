@@ -2,6 +2,7 @@ const divExercise4 = document.getElementById('exercise-4');
 const section5 = document.getElementById('section-5');
 const divExercise6Square = document.getElementById('exercise-6-square');
 const divExercise6 = document.getElementById('exercise-6');
+const divExercise12 = document.getElementById('exercise-12');
 
 divExercise4.addEventListener('mouseover', () => {
     divExercise4.classList.add('animation');
@@ -25,4 +26,8 @@ divExercise6Square.addEventListener('mouseover', () => {
 
 divExercise6Square.addEventListener('mouseout', () => {
     divExercise6.classList.remove('animation2');
+});
+
+divExercise12.addEventListener('mousedown', () => {
+    divExercise12.classList.add('animation3');
 });
