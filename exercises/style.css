@@ -13,3 +13,9 @@
     animation: anime-left-right 3s ease 1s;
     position: relative;
 }
+
+#exercise-2{
+    animation: anime-left-right 2s ease 2s;
+    position: relative;
+    left: 95%;
+}
