@@ -39,6 +39,21 @@
     }
 }
 
+@keyframes anime-color-mult{
+    0%{
+        background-color: red;
+    }
+    35%{
+        background-color: yellow;
+    }
+    65%{
+        background-color: blue;
+    }
+    100%{
+        background-color: green;
+    }
+}
+
 #exercise-1{
     animation: anime-left-right 3s ease 1s;
     position: relative;
@@ -71,4 +86,8 @@
 
 #exercise-8{
     animation: anime-color 4s;
+}
+
+#exercise-9{
+    animation: anime-color-mult 4s ease 0s infinite alternate;
 }
