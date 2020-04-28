@@ -9,6 +9,15 @@
     }
 }
 
+@keyframes anime-right-left{
+    0%{
+        right: 0px;
+    }
+    100%{
+        right: 90%;
+    }
+}
+
 #exercise-1{
     animation: anime-left-right 3s ease 1s;
     position: relative;
