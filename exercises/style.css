@@ -1,0 +1,15 @@
+@keyframes anime-left-right{
+    0%{
+        left: 0px;
+        opacity: 0;
+    }
+    100%{
+        left: 95%;
+        opacity: 1;
+    }
+}
+
+#exercise-1{
+    animation: anime-left-right 3s ease 1s;
+    position: relative;
+}
