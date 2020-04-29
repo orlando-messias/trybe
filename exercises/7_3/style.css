@@ -1,0 +1,87 @@
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes skew {
+    0%{
+        transform: skewX(0deg);
+    }
+    50%{
+        transform: skewX(-15deg);
+    }
+    100%{
+        transform: skewX(0deg);
+    }
+}
+
+@keyframes scale {
+    0%{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(0.7);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes translate {
+    0% {
+        transform: translate(0,0);
+    }
+    50%{
+        transform: translate(10px,10px);
+    }
+    100%{
+        transform: translate(0,0);
+    }
+}
+
+body{
+    padding: 20px;
+}
+
+img{
+    width: 150px;
+}
+
+#line-of-cards{
+    width: 1200px;
+    min-height: 200px;
+    background-color: rgb(204, 228, 156);
+    margin: 10px auto;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    border: 1px solid rgb(169, 190, 125);
+}
+
+.card{
+    padding: 5px;
+    margin: 5px 5px 5px 5px;
+}
+
+.rotate{
+    animation: rotate 1s ease-in;
+}
+
+.skew{
+    animation: skew 1.5s;
+}
+
+.scale{
+    animation: scale 1s ease-in-out;
+}
+
+.translate{
+    animation: translate 1s ease;
+}
