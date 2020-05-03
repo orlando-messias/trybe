@@ -25,3 +25,14 @@ const longestWord = (word => {
     });
     return longest_word;
 });
+
+
+// script exercise 03
+const btn = document.getElementById('click-to-count');
+const inputCount = document.getElementById('count');
+var clickCount = 0; 
+btn.addEventListener('click', () => {
+    event.preventDefault();
+    clickCount ++;
+    inputCount.value = clickCount;
+});
