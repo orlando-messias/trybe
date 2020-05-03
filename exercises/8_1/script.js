@@ -36,3 +36,26 @@ btn.addEventListener('click', () => {
     clickCount ++;
     inputCount.value = clickCount;
 });
+
+
+// exercise 04
+const skills = ['HTML', 'CSS', 'Javascript', 'NodeJS'];
+
+const replaceSpot = str => {
+    let phrase = `
+    Triber x aqui!
+    Tudo bem?`
+
+    phrase = phrase.replace('x', str)
+    return phrase;
+}
+
+function concatAll(fun, str){
+    return `${fun(str)} 
+    Minhas 05 habilidades são: 
+    ${skills.sort()}
+    #goTrybe`;
+}
+
+// calling the function
+concatAll(replaceSpot, 'Student sd04')
