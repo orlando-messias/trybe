@@ -8,6 +8,8 @@ const task = (value) => {
   );
 }
 
+const tecnologies = ['React', 'JSX', 'Webpack', 'Flux/Redux', 'axios/fetch', 'Jest/Mocha'];
+
 function App() {
   return (
     <div className="App">
@@ -25,7 +27,7 @@ function App() {
           Learn React
         </a>
         <p>Tecnologies to build Web Applications</p>
-          {task("React")}
+          {tecnologies.map(tecnologie => task(tecnologie))}
       </header>
     </div>
   );
