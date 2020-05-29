@@ -1,10 +1,15 @@
 import React from 'react'
-import Pokemon from './Pokemon'
 import data from '../data'
+import Pokedex from './Pokedex';
+import './css/styles.css';
 
 class App extends React.Component{
   render(){
-    return <Pokemon pokemon={data[2]} />
+    return (
+      <div className="card-parent">
+        {data.map((item, index) => <Pokedex key={index} pokedex={item} />)}
+      </div>
+    )
   }
 }
 
