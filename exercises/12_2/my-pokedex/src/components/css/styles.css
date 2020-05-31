@@ -1,10 +1,12 @@
 .card{
   border: 1px solid black;
   border-radius: 5px;
-  width: 250px;
+  min-width: 250px;
   text-align: center;
   display: flex;
   padding: 5px;
+  flex:1;
+  margin: 5px;
 }
 
 .card-parent{
