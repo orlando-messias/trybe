@@ -1,0 +1,41 @@
+.card{
+  border: 1px solid black;
+  border-radius: 5px;
+  min-width: 250px;
+  text-align: center;
+  display: flex;
+  padding: 5px;
+  flex:1;
+  margin: 5px;
+}
+
+.card-parent{
+  width: 550px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 50px;
+}
+
+button {
+  margin-left: 10px;
+  border: 2px solid white;
+  background-color: black;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px gray;
+  height: 25px;
+  color: white;
+  font-weight: bold;
+  min-width: 80px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.filterP {
+  font-weight: bold;
+  margin-top: 2 0px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
