@@ -1,0 +1,17 @@
+.main {
+  font-weight: bold;
+  margin: 50px;
+}
+
+.error {
+  font-weight: 400;
+  color: red;
+}
+
+button {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  height: 30px;
+  cursor: pointer;
+}
