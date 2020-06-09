@@ -1,0 +1,21 @@
+button {
+  font-weight: bold;
+  height: 30px;
+  margin: 10px;
+  color: white;
+  background-color: rgb(9, 9, 87);
+  border: 2px white solid;
+  box-shadow: 1px 1px gray;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  padding-top: 5px;
+  cursor: pointer;
+}
+
+h3 {
+  cursor: pointer;
+}
